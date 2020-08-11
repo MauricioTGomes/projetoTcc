@@ -1,0 +1,22 @@
+/**
+mix.styles([
+    'resources/assets/css/bootstrap.min.css',
+    //'node_modules/sweetalert2/dist/sweetalert2.min.css',
+    //'resources/assets/css/plugins.css',
+    //'resources/assets/css/main.css',
+    //'resources/assets/css/theme-default.css',
+], 'public/css/layout-one.css');
+
+mix.babel([
+    'resources/assets/js/vendor/jquery-2.2.0.min.js',
+    'resources/assets/js/vendor/bootstrap.min.js',
+    //'node_modules/sweetalert2/dist/sweetalert2.all.min.js'
+], 'public/js/layout-one.js');
+
+//mix.sass("resources/assets/sass/main.scss", "public/css");
+//mix.copy('resources/assets/css/themes', 'public/css/themes');
+
+mix.version([
+    'public/css/layout-one.css',
+    'public/js/layout-one.js']);
+**/
