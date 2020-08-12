@@ -14,7 +14,7 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js/app.js')
     .sass('resources/sass/app.scss', 'public/css');
 
-mix.js('resources/js/vue/main.js', 'public/js/mainVue.js');
+mix.js('resources/vue/main.js', 'public/js/mainVue.js');
 
 /*
 mix.babel([
@@ -33,4 +33,5 @@ mix.styles([
     'resources/css/layout/sb-admin-2.min.css',
     'resources/css/layout/all.min.css',
 ], 'public/js/layout-one.css');
+mix.browserSync('127.0.0.1:8000');
 */

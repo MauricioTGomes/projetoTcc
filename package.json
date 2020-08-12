@@ -12,6 +12,7 @@
     "devDependencies": {
         "axios": "^0.19",
         "bootstrap": "^4.0.0",
+        "browser-sync": "^2.26.12",
         "cross-env": "^7.0",
         "jquery": "^3.2",
         "laravel-mix": "^5.0.1",
@@ -25,9 +26,17 @@
     },
     "dependencies": {
         "bootstrap": "^4.5.2",
+        "datatables.net": "^1.10.21",
         "font-awesome": "^4.7.0",
+        "node-sass": "^4.12.0",
+        "register-service-worker": "^1.7.1",
         "startbootstrap-sb-admin-2": "^4.1.1",
+        "v-money": "^0.8.1",
         "vue": "^2.6.11",
-        "vue-router": "^3.4.2"
+        "vue-confirm-dialog": "^1.0.2",
+        "vue-router": "^3.4.2",
+        "vue-select": "^3.10.8",
+        "vue-the-mask": "^0.11.1",
+        "vuex": "^3.5.1"
     }
 }
