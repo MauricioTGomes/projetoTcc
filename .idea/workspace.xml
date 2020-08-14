@@ -23,16 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f6aa715-2f7b-4c94-83bb-dfd9aa71637c" name="Default Changelist" comment="Tudo rodando">
-      <change afterPath="$PROJECT_DIR$/app/MovimentacaoCaixa.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8c9570b5-d5a3-42f7-955b-dd428c7a5fe2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8c9570b5-d5a3-42f7-955b-dd428c7a5fe2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Diagramas.asta" beforeDir="false" afterPath="$PROJECT_DIR$/Diagramas.asta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Conta.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Conta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ContaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ContaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ParcelaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ParcelaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Parcela.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Parcela.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/tables/0000_00_00_000008__create_contas_receber_pagars_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/tables/0000_00_00_000008__create_contas_receber_pagars_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/tables/2018_00_36_000100_create_parcela_receber_pagar_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/tables/2018_00_36_000100_create_parcela_receber_pagar_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/tables/2018_00_38_000000_create_movi_caixa_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/tables/2018_00_38_000000_create_movi_caixa_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +214,7 @@
       <workItem from="1597098521003" duration="2123000" />
       <workItem from="1597167081883" duration="19026000" />
       <workItem from="1597193743709" duration="278000" />
-      <workItem from="1597365031897" duration="6675000" />
+      <workItem from="1597365031897" duration="6883000" />
     </task>
     <task id="LOCAL-00001" summary="Tudo rodando">
       <created>1597175558516</created>
@@ -229,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597175558516</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Tudo rodando">
+      <created>1597371811996</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1597371811996</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,14 +293,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="905" height="179" key="GridCell.Tab.0.right/1366.-1.1360.728/0.0.1366.728@0.0.1366.728" timestamp="1597366305649" />
-    <state x="475" y="84" key="RollbackChangesDialog" timestamp="1597174025419">
+    <state x="475" y="84" key="RollbackChangesDialog" timestamp="1597371785354">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="475" y="84" key="RollbackChangesDialog/1366.-1.1360.728/0.0.1366.728@0.0.1366.728" timestamp="1597174025419" />
+    <state x="475" y="84" key="RollbackChangesDialog/1366.-1.1360.728/0.0.1366.728@0.0.1366.728" timestamp="1597371785354" />
     <state x="184" y="9" key="SettingsEditor" timestamp="1597183711714">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="9" key="SettingsEditor/1366.-1.1360.728/0.0.1366.728@0.0.1366.728" timestamp="1597183711714" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1597371861482">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/1366.-1.1360.728/0.0.1366.728@0.0.1366.728" timestamp="1597371861482" />
     <state x="519" y="137" width="590" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1597370278563">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

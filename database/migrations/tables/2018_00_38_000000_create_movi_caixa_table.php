@@ -14,9 +14,9 @@ class CreateMoviCaixaTable extends Migration {
 
         Schema::create('movimentacao_caixa', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('pedido_id')->unsigned();
+            $table->integer('pedido_id')->unsigned()->default(null);
             $table->integer('user_id')->unsigned();
-            $table->integer('parcela_id')->unsigned();
+            $table->integer('parcela_id')->unsigned()->default(null);
             $table->decimal('valor', 10, 2)->default(0.00);
             $table->string('descricao', 255);
             $table->char('operacao', 1)->default(0);

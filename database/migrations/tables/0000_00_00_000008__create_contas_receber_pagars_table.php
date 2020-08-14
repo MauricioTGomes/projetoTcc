@@ -12,9 +12,9 @@ class CreateContasReceberPagarsTable extends Migration {
     public function up() {
         Schema::create('conta_receber_pagar', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('pessoa_id')->unsigned();
+            $table->integer('pessoa_id')->unsigned()->default(null);
             $table->integer('user_id')->unsigned();
-            $table->integer('pedido_id')->unsigned();
+            $table->integer('pedido_id')->unsigned()->default(null);
             $table->char('tipo_operacao', 1); //P ou R);
             $table->decimal('vlr_total', 10, 2)->default(0.00);
             $table->decimal('vlr_restante', 10, 2)->default(0.00);

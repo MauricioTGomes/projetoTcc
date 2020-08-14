@@ -20,7 +20,7 @@ class CreateParcelaReceberPagarTable extends Migration {
             $table->decimal('valor', 10, 2)->default(0.00);
             $table->decimal('valor_original', 10, 2)->default(0.00);
             $table->date('data_vencimento');
-            $table->date('data_pagamento');
+            $table->date('data_pagamento')->default(null);
             $table->timestamps();
         });
 
