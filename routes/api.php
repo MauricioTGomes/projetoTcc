@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'auth:api'], function () {
     Route::post('/getCidade', 'MenuController@getCidade');
-    
+
     Route::group(['where' => ['id' => '[0-9]+'], 'prefix' => 'pessoas'], function () {
         Route::post('/listar', 'PessoaController@getPessoas');
         Route::post('/get/{idPessoa}', 'PessoaController@getPessoa');
@@ -29,6 +29,9 @@ Route::group(['middleware' => 'auth:api'], function () {
         Route::post('/update', 'ContaController@update');
         Route::post('/deletar/{id}', 'ContaController@excluir');
         Route::post('/calculaParcelas', 'ContaController@calculaParcela');
+
+        Route::post('/baixarParcela/{id}', 'ParcelaController@baixarParcela');
+        Route::post('/estornarParcela/{id}', 'ParcelaController@estornoParcela');
     });
 });
 

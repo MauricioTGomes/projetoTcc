@@ -38,9 +38,13 @@ class Parcela extends Model {
 		}
 	}
 
-	public function getDatapagamentoAttribute($value) {
-		return (new Carbon($value))->format('d/m/Y');
-	}
+    public function getDataPagamentoAttribute($value) {
+        try {
+            return (new Carbon($value))->format('d/m/Y');
+        } catch (\Exception $e) {
+            return $value;
+        }
+    }
 
 	public function setDatapagamentoAttribute($value) {
 		try {
@@ -54,14 +58,14 @@ class Parcela extends Model {
 		return $this->attributes['valor'] = formatValueForMysql($value);
 	}
 
-	public function setValorOriginalçAttribute($value) {
+	public function setValorOriginalAttribute($value) {
 		return $this->attributes['valor_original'] = formatValueForMysql($value);
 	}
 
 	public function conta() {
 		return $this->belongsTo(Conta::class , 'conta_id');
     }
-    
+
     public function getTotalDia($tipo, $dia) {
 		$query = $this->newQuery();
 		$query->join('contas_receber_pagar as conta', 'conta.id', '=', 'parcelas_receber_pagar.conta_id')

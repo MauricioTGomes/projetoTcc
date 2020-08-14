@@ -23,12 +23,8 @@ class ContaController extends Controller {
 	}
 
 	public function getContas(Request $request) {
-		$contas = $this->contaModel->newQuery()->where('tipo_operacao', $request->input('tipo'))->where('vlr_restante', '>', '0.00')->with('pessoa', 'parcelas', 'parcelasPagas')->get();
+		$contas = $this->contaModel->getContasListagem($request->input('tipo'));
 		return response()->json($contas);
-	}
-
-	private function formataData($data) {
-		return $data == "" ? null : Carbon::createFromFormat('d/m/Y', $data)->format('Y-m-d');
 	}
 
 	public function calculaParcela(Request $request) {
@@ -91,20 +87,21 @@ class ContaController extends Controller {
 
 	private function gravaParcelas($parcelas, $contaId) {
 		foreach ($parcelas as $index => $parcela) {
+            $parcela['valor_original'] = $parcela['valor'];
 			$parcela['conta_id'] = $contaId;
 			Parcela::create($parcela);
 		}
 	}
 
-	public function update($id, Request $request) {
+	public function update(Request $request) {
 		try {
 			DB::beginTransaction();
 			if ($request->get('parcelas') == 0) {
 				throw new \Exception("Favor calcular as parcelas antes de continuar");
 			}
-			$conta = $this->contaModel->find($id);
+            $input = $request->all();
+			$conta = $this->contaModel->find($input['id']);
 			$conta->parcelas()->delete();
-			$input = $request->all();
 			$input['vlr_restante'] = $input['vlr_total'];
 			$conta->update($input);
 			$this->gravaParcelas($request->get('parcelas'), $conta->id);
@@ -117,7 +114,8 @@ class ContaController extends Controller {
 	}
 
 	public function getConta($id) {
-		return response()->json($this->contaModel->find($id));
+	    $conta = $this->contaModel->find($id)->load('pessoa');
+		return response()->json($conta);
 	}
 
 	public function excluir($id) {

@@ -38,6 +38,14 @@ class Conta extends Model {
 		return $this->attributes['vlr_restante'] = formatValueForMysql($value);
 	}
 
+    public function getVlrTotalAttribute($value) {
+        return formatValueForUser($value);
+    }
+
+    public function getVlrRestanteAttribute($value) {
+        return formatValueForUser($value);
+    }
+
 	public function pessoa() {
 		return $this->belongsTo(Pessoa::class );
 	}
@@ -54,6 +62,10 @@ class Conta extends Model {
 		return $this->hasMany(Parcela::class )->where('baixada', '1');
 	}
 
+    public function parcelasAbertas() {
+        return $this->hasMany(Parcela::class )->where('baixada', '0');
+    }
+
 	public function getDataEmissaoAttribute($value) {
 		return (new Carbon($value))->format('d/m/Y');
 
@@ -66,4 +78,13 @@ class Conta extends Model {
 			$this->attributes['data_emissao'] = date('Y-m-d');
 		}
 	}
+
+	public function getContasListagem($tipo = 'R') {
+	    return $this->newQuery()
+            ->join('pessoa', 'pessoa.id', '=', 'conta_receber_pagar.pessoa_id')
+            ->where('tipo_operacao', $tipo)
+            ->where('vlr_restante', '>', '0.00')
+            ->with('pessoa', 'parcelas', 'parcelasPagas', 'parcelasAbertas')
+            ->select(DB::raw("conta_receber_pagar.*, if(pessoa.tipo = 'JURIDICO', CONCAT(pessoa.razao_social, ' (', pessoa.cnpj, ')'), CONCAT(pessoa.nome, ' (', pessoa.cpf, ')')) as nome_pessoa"))->get();
+    }
 }
