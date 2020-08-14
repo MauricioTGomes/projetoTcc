@@ -11,12 +11,12 @@ const mix = require('laravel-mix');
  |
  */
 
+/*
 mix.js('resources/js/app.js', 'public/js/app.js')
     .sass('resources/sass/app.scss', 'public/css');
 
 mix.js('resources/vue/main.js', 'public/js/mainVue.js');
 
-/*
 mix.babel([
     'resources/js/layout/jquery.easing.min.js',
     'resources/js/layout/jquery.min.js',

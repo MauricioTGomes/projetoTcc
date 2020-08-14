@@ -18,10 +18,6 @@ class Produto extends Model
         'ativo'
     ];
 
-    public function setAtivoAttribute($value) {
-        return $this->attributes['ativo'] = $value['value'];
-    }
-
     public function setQtdEstoqueAttribute($value) {
         return $this->attributes['qtd_estoque'] = formatValueForMysql($value);
     }

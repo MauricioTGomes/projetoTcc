@@ -19,11 +19,4 @@ class Cidade extends Model
     public function getNomeCompletoAttribute() {
         return $this->nome . ' - ' . $this->estado->uf;
     }
-
-    public function getSelect() {
-        $cidades = $this->all();
-        $opcoes = [];
-        foreach($cidades as $cidade) array_push($opcoes, ['label' => $cidade->nome_completo, 'value' => $cidade->id]);
-        return $opcoes;
-    }
 }

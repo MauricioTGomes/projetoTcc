@@ -10,7 +10,9 @@ class MenuController extends Controller
 
     public function __contruct() {}
 
-    public function getCidadesSelect(Cidade $cidade) {
-        return response()->json($cidade->getSelect());
+    public function getCidade(Request $request, Cidade $cidadeModel) {
+        $input = $request->all();
+        $cidade = $cidadeModel->newQuery()->where($input['campo'], $input['valor'])->get()->first();
+        return response()->json($cidade);
     }
 }

@@ -15,9 +15,9 @@ class Conta extends Model {
 		'user_id',
 		'titulo',
 		'data_emissao',
+		'tipo_operacao',
 		'vlr_total',
 		'vlr_restante',
-		'tipo_operacao',
 		'qtd_dias'
 	];
 
@@ -31,17 +31,11 @@ class Conta extends Model {
 	}
 
 	public function setVlrTotalAttribute($value) {
-		if (str_contains($value, ',')) {
-			return $this->attributes['vlr_total'] = formatValueForMysql($value);
-		}
-		return $this->attributes['vlr_total'] = $value;
+		return $this->attributes['vlr_total'] = formatValueForMysql($value);
 	}
 
 	public function setVlrRestanteAttribute($value) {
-		if (str_contains($value, ',')) {
-			return $this->attributes['vlr_restante'] = formatValueForMysql($value);
-		}
-		return $this->attributes['vlr_restante'] = $value;
+		return $this->attributes['vlr_restante'] = formatValueForMysql($value);
 	}
 
 	public function pessoa() {
@@ -66,14 +60,10 @@ class Conta extends Model {
 	}
 
 	public function setDataEmissaoAttribute($value) {
-		if (strlen($value) > 0) {
-			try {
-				$this->attributes['data_emissao'] = Carbon::createFromFormat('d/m/Y', $value);
-			} catch (\Exception $e) {
-				$this->attributes['data_emissao'] = date('Y-m-d');
-			}
-		} else {
-			return null;
+		try {
+			$this->attributes['data_emissao'] = Carbon::createFromFormat('d/m/Y', $value);
+		} catch (\Exception $e) {
+			$this->attributes['data_emissao'] = date('Y-m-d');
 		}
 	}
 }

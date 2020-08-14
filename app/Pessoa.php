@@ -31,7 +31,7 @@ class Pessoa extends Model
         'tipo'
     ];
 
-    protected $appends = ["nome_completo", "nome_documento_completo", "documento_completo", 'nome_cidade_completo'];
+    protected $appends = ['mostrar_detalhe', "nome_completo", "nome_documento_completo", "documento_completo", 'nome_cidade_completo'];
 
     public function cidade() {
 		return $this->hasOne(Cidade::class , 'id', 'cidade_id');
@@ -39,6 +39,10 @@ class Pessoa extends Model
 
     public function getNomeCompletoAttribute() {
         return $this->tipo == 'FISICO' ? $this->nome : $this->fantasia . ' (' . $this->razao_social . ')';
+    }
+
+    public function getMostrarDetalheAttribute() {
+        return false;
     }
 
     public function getDocumentoCompletoAttribute() {
@@ -60,15 +64,6 @@ class Pessoa extends Model
     public function setClienteAttribute($value) {
         return $this->attributes['cliente'] = $value ? '1' : '0';
     }
-
-
-    public function setAtivoAttribute($value) {
-        return $this->attributes['ativo'] = $value['value'];
-    }
-
-    public function setTipoAttribute($value) {
-		return $this->attributes['tipo'] = $value['value'];
-	}
 
     public function buscaPessoasPesquisa($parametro = null) {
 		$query = $this->newQuery();

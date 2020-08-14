@@ -8,11 +8,11 @@
  */
 function formatValueForMysql($valor) {
 
-	if (strlen($valor) <= 6) {
+	//if (strlen($valor) <= 6) {
 		return str_replace(',', '.', $valor);
-	}
+	//}
 
-	return str_replace(',', '.', str_replace('.', '', $valor));
+	//return str_replace(',', '.', str_replace('.', '', $valor));
 }
 
 /**

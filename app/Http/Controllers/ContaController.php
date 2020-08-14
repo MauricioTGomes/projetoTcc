@@ -1,17 +1,14 @@
 <?php
 
+namespace App\Http\Controllers;
+
 use App\Conta;
 use App\Parcela;
 use App\Pessoa;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Input;
-
-use League\Flysystem\Exception;
 
 class ContaController extends Controller {
 
@@ -25,29 +22,33 @@ class ContaController extends Controller {
 		$this->pessoaModel  = $pessoaModel;
 	}
 
-	private function formataData($data) {
-		return $data == "" ? null : Carbon::createFromFormat('d/m/Y', $data)->format('Y-m-d');
-	}
-
-	public function buscaContas(Request $request) {
+	public function getContas(Request $request) {
 		$contas = $this->contaModel->newQuery()->where('tipo_operacao', $request->input('tipo'))->where('vlr_restante', '>', '0.00')->with('pessoa', 'parcelas', 'parcelasPagas')->get();
 		return response()->json($contas);
+	}
+
+	private function formataData($data) {
+		return $data == "" ? null : Carbon::createFromFormat('d/m/Y', $data)->format('Y-m-d');
 	}
 
 	public function calculaParcela(Request $request) {
 		$vlrTotal    = formatValueForMysql($request->input('vlr_total'));
 		$qtdDias     = $request->input('qtd_dias');
 		$qtdParcelas = $request->input('qtd_parcelas');
-		$dataEmissao = Carbon::createFromFormat('d/m/Y', $request->input('data_emissao'));
+		$primeiraCobranca = Carbon::createFromFormat('Y-m-d', $request->input('primeira_cobranca'));
 
 		$vlr_parcela   = $vlrTotal/$qtdParcelas;
 		$arrayParcelas = [];
 		$somaParcelas  = 0;
 
 		for ($i = 1; $i <= $qtdParcelas; $i++) {
-			$dataParcela = $dataEmissao->addDays($qtdDias);
+			if ($i == 1) {
+				$dataParcela = $primeiraCobranca;
+			} else {
+				$dataParcela = $primeiraCobranca->addDays($qtdDias);
+			}
 			array_push($arrayParcelas, [
-					'data_vencimento' => $dataParcela->format('d/m/Y'),
+					'data_vencimento' => $dataParcela->format('Y-m-d'),
 					'valor'           => number_format(round($vlr_parcela, 2), 2, ',', '.'),
 					'nro_parcela'     => $i]);
 			$somaParcelas += round($vlr_parcela, 2);
@@ -67,26 +68,24 @@ class ContaController extends Controller {
 		return $arrayParcelas;
 	}
 
-	public function gravar(ContaRequest $request) {
+	public function gravar(Request $request) {
 		try {
 			DB::beginTransaction();
-			if ($request->get('array_parcela') == 0) {
-				throw new Exception("Favor calcular as parcelas antes de continuar");
-
+			if ($request->get('parcelas') == 0) {
+				throw new \Exception("Favor calcular as parcelas antes de continuar");
 			}
 
-			$input                 = $request->all();
-			$input['user_id']      = Auth::user()->id;
+			$input = $request->all();
+			$input['user_id'] = auth()->user()->id;
 			$input['vlr_restante'] = $input['vlr_total'];
-			$conta                 = Conta::create($input);
-			$this->gravaParcelas($input['array_parcela'], $conta->id);
+			$input['data_emissao'] = Carbon::now();
+			$conta = Conta::create($input);
+			$this->gravaParcelas($input['parcelas'], $conta->id);
 			DB::commit();
-			return redirect()->route('contas.'.($request->get('tipo_operacao') == 'R'?'receber':'pagar').'.listar'.
-				'')
-				->with(['sucesso' => "Sucesso ao lançar conta", 'conta' => $conta]);
+			return response()->json(['erro' => false, 'mensagem' => 'Conta lançada com sucesso.']);
 		} catch (\Exception $e) {
 			DB::rollback();
-			return back()->with('erro', 'Erro ao lançar conta'."\n".$e->getMessage());
+			return response()->json(['erro' => true, 'mensagem' => 'Erro ao lançar conta ' . $e]);
 		}
 	}
 
@@ -100,44 +99,40 @@ class ContaController extends Controller {
 	public function update($id, Request $request) {
 		try {
 			DB::beginTransaction();
-			if ($request->get('array_parcela') == 0) {
-				throw new Exception("Favor calcular as parcelas antes de continuar");
-
+			if ($request->get('parcelas') == 0) {
+				throw new \Exception("Favor calcular as parcelas antes de continuar");
 			}
 			$conta = $this->contaModel->find($id);
-			foreach ($conta->parcelas as $parcela) {
-				$parcela->delete();
-			}
-			$conta->load('parcelas');
-			$input                 = $request->all();
-			$input['vlr_total']    = formatValueForMysql($input['vlr_total']);
+			$conta->parcelas()->delete();
+			$input = $request->all();
 			$input['vlr_restante'] = $input['vlr_total'];
 			$conta->update($input);
-			$this->gravaParcelas($request->get('array_parcela'), $conta->id);
+			$this->gravaParcelas($request->get('parcelas'), $conta->id);
 			DB::commit();
-			return redirect()->route('contas.'.($request->get('tipo_operacao') == 'R'?'receber':'pagar').'.listar')
-				->with('sucesso', "Conta alterada com sucesso.");
+			return response()->json(['erro' => false, 'mensagem' => 'Conta lançada com sucesso.']);
 		} catch (\Exception $e) {
 			DB::rollback();
-			return back()->with('erro', "Não foi possível salvar alterações"."\n".$e->getMessage());
+			return response()->json(['erro' => true, 'mensagem' => 'Erro ao lançar conta ' . $e->getMessage()]);
 		}
 	}
 
-	public function deletar($id) {
+	public function getConta($id) {
+		return response()->json($this->contaModel->find($id));
+	}
+
+	public function excluir($id) {
 		$conta = $this->contaModel->find($id);
-		$tipo  = $conta->tipo_operacao == 'R'?'receber':'pagar';
 		try {
 			foreach ($conta->parcelas as $parcela) {
 				if ($parcela->baixada == 1) {
 					throw new \Exception("Conta com movimentação financeira");
-
 				}
 			}
 			$conta->delete();
-			return response()->json(['erro' => 0, 'msg' => 'Sucesso ao eliminar conta!']);
+			return response()->json(['erro' => false, 'mensagem' => 'Conta excluida com sucesso.']);
 		} catch (\Exception $e) {
 			DB::rollback();
-			return response()->json(['erro' => 1, 'msg' => $e->getMessage()]);
+			return response()->json(['erro' => true, 'mensagem' => 'Erro excluir conta ' . $e->getMessage()]);
 		}
 	}
 }

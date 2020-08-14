@@ -23,63 +23,39 @@ class Parcela extends Model {
 	protected $dates = ['data_pagamento', 'data_vencimento', 'updated_at', 'created_at'];
 
 	public function setDataVencimentoAttribute($value) {
-		if (strlen($value) > 0) {
-			try {
-				$this->attributes['data_vencimento'] = Carbon::createFromFormat('d/m/Y', $value);
-			} catch (\Exception $e) {
-				$this->attributes['data_vencimento'] = date('Y-m-d');
-			}
-		} else {
-			return null;
+		try {
+			$this->attributes['data_vencimento'] = Carbon::createFromFormat('Y-m-d', $value);
+		} catch (\Exception $e) {
+			$this->attributes['data_vencimento'] = date('Y-m-d');
 		}
 	}
 
 	public function getDataVencimentoAttribute($value) {
-		if (strlen($value) > 0) {
-			try {
-				return (new Carbon($value))->format('d/m/Y');
-			} catch (\Exception $e) {
-				return $value;
-			}
-		} else {
-			return null;
+		try {
+			return (new Carbon($value))->format('d/m/Y');
+		} catch (\Exception $e) {
+			return $value;
 		}
 	}
 
 	public function getDatapagamentoAttribute($value) {
-		if (strlen($value) > 0) {
-			return (new Carbon($value))->format('d/m/Y');
-		} else {
-			return null;
-		}
+		return (new Carbon($value))->format('d/m/Y');
 	}
 
 	public function setDatapagamentoAttribute($value) {
-		if (strlen($value) > 0) {
-			try {
-				$this->attributes['data_pagamento'] = Carbon::createFromFormat('d/m/Y', $value);
-			} catch (\Exception $e) {
-				$this->attributes['data_pagamento'] = date('Y-m-d');
-			}
-		} else {
-			return null;
+		try {
+			$this->attributes['data_pagamento'] = Carbon::createFromFormat('d/m/Y', $value);
+		} catch (\Exception $e) {
+			$this->attributes['data_pagamento'] = date('Y-m-d');
 		}
 	}
 
 	public function setValorAttribute($value) {
-		if (substr_count($value, ',') == 0) {
-			return $this->attributes['valor'] = $value;
-		} else {
-			return $this->attributes['valor'] = formatValueForMysql($value);
-		}
+		return $this->attributes['valor'] = formatValueForMysql($value);
 	}
 
 	public function setValorOriginalçAttribute($value) {
-		if (substr_count($value, ',') == 0) {
-			return $this->attributes['valor_original'] = $value;
-		} else {
-			return $this->attributes['valor_original'] = formatValueForMysql($value);
-		}
+		return $this->attributes['valor_original'] = formatValueForMysql($value);
 	}
 
 	public function conta() {

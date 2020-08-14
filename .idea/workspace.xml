@@ -23,84 +23,81 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f6aa715-2f7b-4c94-83bb-dfd9aa71637c" name="Default Changelist" comment="Tudo rodando">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/css/demo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/fonts/nucleo-icons.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/fonts/nucleo-icons.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/fonts/nucleo-icons.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/fonts/nucleo-icons.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/fonts/nucleo-icons.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/_alerts.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/_bootstrap-switch.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/_buttons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/_checkbox-radio-switch.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/_dropdown.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/_footers.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/_inputs.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/_misc.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/_navbars.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/_partial-nucleo-icons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/_responsive.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/_sidebar-and-main-panel.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/_tables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/_typography.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/mixins/_buttons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/mixins/_cards.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/mixins/_chartist.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/mixins/_icons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/mixins/_inputs.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/mixins/_labels.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/mixins/_morphing-buttons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/mixins/_navbars.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/mixins/_social-buttons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/mixins/_tabs.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/mixins/_transparency.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/mixins/_vendor-prefixes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/plugins/_animate.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/lbd/plugins/_datetime-picker.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/sass/light-bootstrap-dashboard.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/App.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/components/BaseDropdown.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/components/Card.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/components/Inputs/BaseCheckbox.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/components/Inputs/BaseInput.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/components/Inputs/BaseRadio.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/components/NotificationPlugin/Notification.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/components/NotificationPlugin/Notifications.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/components/NotificationPlugin/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/components/SidebarPlugin/SideBar.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/components/SidebarPlugin/SidebarLink.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/components/SidebarPlugin/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/components/Table.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/components/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/configs/globalComponents.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/configs/globalDirectives.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/configs/light-bootstrap-main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/configs/registerServiceWorker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/directives/click-ouside.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/layout/Content.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/layout/Dashboard.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/layout/MobileMenu.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/layout/TopNavbar.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/store/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/store/modules/Auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/store/modules/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/store/modules/services.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/views/Login.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/vue/views/Pessoa/Listar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/projetoTcc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projetoTcc.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Diagramas.asta" beforeDir="false" afterPath="$PROJECT_DIR$/Diagramas.asta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Diagramas.asta.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Cidade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Cidade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Conta.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Conta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ContaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ContaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MenuController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MenuController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Parcela.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Parcela.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Pessoa.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Pessoa.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Produto.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Produto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/vue/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/vue/layout/App.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/vue/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/vue/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/vue/views/Home.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/vendor/font-awesome/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/vendor/font-awesome/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/vendor/font-awesome/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/vendor/font-awesome/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/vendor/font-awesome/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/mainVue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/mainVue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/css/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/lbd/_dropdown.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/lbd/_footers.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/lbd/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/lbd/_navbars.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/lbd/_responsive.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/lbd/_sidebar-and-main-panel.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/lbd/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/lbd/mixins/_buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/lbd/mixins/_cards.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/lbd/mixins/_chartist.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/lbd/mixins/_icons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/lbd/mixins/_inputs.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/lbd/mixins/_labels.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/lbd/mixins/_morphing-buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/lbd/mixins/_navbars.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/lbd/mixins/_social-buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/lbd/mixins/_tabs.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/lbd/mixins/_transparency.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/lbd/mixins/_vendor-prefixes.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/lbd/plugins/_animate.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/lbd/plugins/_datetime-picker.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/light-bootstrap-dashboard.scss" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vue/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vue/components/BaseDropdown.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vue/components/NotificationPlugin/Notification.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vue/components/NotificationPlugin/Notifications.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vue/components/NotificationPlugin/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vue/components/SidebarPlugin/SideBar.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vue/components/SidebarPlugin/SidebarLink.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vue/components/SidebarPlugin/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vue/configs/light-bootstrap-main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vue/configs/registerServiceWorker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vue/directives/click-ouside.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vue/layout/Content.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vue/layout/Dashboard.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vue/layout/MobileMenu.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vue/layout/TopNavbar.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vue/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vue/router.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vue/store/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vue/store/modules/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vue/store/modules/Auth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vue/store/modules/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vue/store/modules/services.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vue/views/Login.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vue/views/Pessoa/Form.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vue/views/Pessoa/Listar.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vue/views/Produto/Form.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vue/views/Produto/Listar.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
@@ -227,6 +224,12 @@
       <path value="$PROJECT_DIR$/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-util" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php56" />
+      <path value="$PROJECT_DIR$/vendor/namshi/jose" />
+      <path value="$PROJECT_DIR$/vendor/tymon/jwt-auth" />
+      <path value="$PROJECT_DIR$/vendor/webpatser/laravel-uuid" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
     </include_path>
   </component>
   <component name="ProjectId" id="1fv6ZWAt6W6lo7cqUcEv2rkcYzM" />
@@ -235,9 +238,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/vue/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../projetoTccFront" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
@@ -278,6 +282,7 @@
       <workItem from="1597098521003" duration="2123000" />
       <workItem from="1597167081883" duration="19026000" />
       <workItem from="1597193743709" duration="278000" />
+      <workItem from="1597365031897" duration="522000" />
     </task>
     <task id="LOCAL-00001" summary="Tudo rodando">
       <created>1597175558516</created>
@@ -309,6 +314,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Tudo rodando" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597365090748">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/1366.-1.1360.728/0.0.1366.728@0.0.1366.728" timestamp="1597365090748" />
     <state x="432" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597176670739">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -321,10 +330,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="129" y="55" key="DiffContextDialog/1366.-1.1360.728/0.0.1366.728@0.0.1366.728" timestamp="1597097862057" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1597193973154">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1597365216764">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/1366.-1.1360.728/0.0.1366.728@0.0.1366.728" timestamp="1597193973154" />
+    <state x="463" y="119" key="FileChooserDialogImpl/1366.-1.1360.728/0.0.1366.728@0.0.1366.728" timestamp="1597365216764" />
     <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1597096296525">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -349,6 +358,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="9" key="SettingsEditor/1366.-1.1360.728/0.0.1366.728@0.0.1366.728" timestamp="1597183711714" />
+    <state x="519" y="137" width="590" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1597365346523">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="519" y="137" width="590" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1366.-1.1360.728/0.0.1366.728@0.0.1366.728" timestamp="1597365346523" />
     <state x="284" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1597185834527">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -357,9 +370,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="390" y="0" width="690" height="728" key="find.popup/1366.-1.1360.728/0.0.1366.728@0.0.1366.728" timestamp="1597184798723" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1597193911125">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1597365369756">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/1366.-1.1360.728/0.0.1366.728@0.0.1366.728" timestamp="1597193911125" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/1366.-1.1360.728/0.0.1366.728@0.0.1366.728" timestamp="1597365369756" />
   </component>
 </project>
