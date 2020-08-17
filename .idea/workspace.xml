@@ -22,62 +22,52 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f6aa715-2f7b-4c94-83bb-dfd9aa71637c" name="Default Changelist" comment="Tudo rodando">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ControlaPedido.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MovimentacaoController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PedidoController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Item.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Pedido.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../projetoTccFront/public/img/users.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../projetoTccFront/src/components/auxiliar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../projetoTccFront/src/components/fields.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../projetoTccFront/src/views/Financeiro/Listar.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../projetoTccFront/src/views/Pedido/Form.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../projetoTccFront/src/views/Pedido/Listar.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../projetoTccFront/src/views/Usuario/Form.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../projetoTccFront/src/views/Usuario/Listar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8c9570b5-d5a3-42f7-955b-dd428c7a5fe2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8c9570b5-d5a3-42f7-955b-dd428c7a5fe2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/projetoTcc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projetoTcc.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="1f6aa715-2f7b-4c94-83bb-dfd9aa71637c" name="Default Changelist" comment="Ajustes finais backend">
+      <change afterPath="$PROJECT_DIR$/../projetoTccFront/public/icons/android-chrome-192x192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../projetoTccFront/public/icons/android-chrome-512x512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../projetoTccFront/public/icons/apple-touch-icon-120x120.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../projetoTccFront/public/icons/apple-touch-icon-152x152.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../projetoTccFront/public/icons/apple-touch-icon-180x180.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../projetoTccFront/public/icons/apple-touch-icon-60x60.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../projetoTccFront/public/icons/apple-touch-icon-76x76.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../projetoTccFront/public/icons/apple-touch-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../projetoTccFront/public/icons/favicon-16x16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../projetoTccFront/public/icons/favicon-32x32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../projetoTccFront/public/icons/msapplication-icon-144x144.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../projetoTccFront/public/icons/mstile-150x150.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../projetoTccFront/public/icons/safari-pinned-tab.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../projetoTccFront/public/robots.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Diagramas.asta" beforeDir="false" afterPath="$PROJECT_DIR$/Diagramas.asta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Conta.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Conta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ContaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ContaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ParcelaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ParcelaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PessoaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PessoaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProdutoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProdutoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/MovimentacaoCaixa.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/MovimentacaoCaixa.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Pessoa.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Pessoa.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Produto.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Produto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/tables/0000_00_00_000006_create_pedido_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/tables/0000_00_00_000006_create_pedido_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projetoTccFront/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../projetoTccFront/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/img/avatars/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/img/avatars/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/img/avatars/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/img/avatars/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/img/avatars/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/img/avatars/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/img/avatars/7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/img/avatars/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/android-icon-144x144.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/android-icon-192x192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/android-icon-36x36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/android-icon-48x48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/android-icon-72x72.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/android-icon-96x96.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/apple-icon-114x114.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/apple-icon-120x120.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/apple-icon-144x144.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/apple-icon-152x152.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/apple-icon-180x180.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/apple-icon-57x57.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/apple-icon-60x60.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/apple-icon-72x72.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/apple-icon-76x76.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/apple-icon-precomposed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/apple-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/browserconfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/favicon-16x16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/favicon-32x32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/favicon-96x96.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/../projetoTccFront/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/img/users.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../projetoTccFront/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../projetoTccFront/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/ms-icon-144x144.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/ms-icon-150x150.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/ms-icon-310x310.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projetoTccFront/public/ms-icon-70x70.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../projetoTccFront/src/assets/icons/icons.js" beforeDir="false" afterPath="$PROJECT_DIR$/../projetoTccFront/src/assets/icons/icons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projetoTccFront/src/assets/icons/logo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projetoTccFront/src/components/Pesquisa.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../projetoTccFront/src/components/Pesquisa.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projetoTccFront/src/containers/TheContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../projetoTccFront/src/containers/TheContainer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projetoTccFront/src/containers/_nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/../projetoTccFront/src/containers/_nav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projetoTccFront/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../projetoTccFront/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projetoTccFront/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../projetoTccFront/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projetoTccFront/src/views/Financeiro/Conta/Form.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../projetoTccFront/src/views/Financeiro/Conta/Form.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projetoTccFront/src/views/Financeiro/Conta/Listar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../projetoTccFront/src/views/Financeiro/Conta/Listar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projetoTccFront/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../projetoTccFront/src/views/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projetoTccFront/src/views/Pessoa/Listar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../projetoTccFront/src/views/Pessoa/Listar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projetoTccFront/src/views/Produto/Listar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../projetoTccFront/src/views/Produto/Listar.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +217,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../projetoTccFront/public" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -239,11 +229,11 @@
       <recent name="C:\Users\mauri\Documents\Projetos\projetoTcc\resources\js\vue" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mauri\Documents\Projetos\projetoTccFront\public" />
       <recent name="C:\Users\mauri\Documents\Projetos\projetoTcc\app\Http\Controllers" />
       <recent name="C:\Users\mauri\Documents\Projetos\projetoTccFront\src\views\Financeiro" />
       <recent name="C:\Users\mauri\Documents\Projetos\projetoTccFront\src\views\Usuario" />
       <recent name="C:\Users\mauri\Documents\Projetos\projetoTcc\app" />
-      <recent name="C:\Users\mauri\Documents\Projetos\projetoTccFront\src\views" />
     </key>
   </component>
   <component name="RunManager">
@@ -274,7 +264,7 @@
       <workItem from="1597593787934" duration="3928000" />
       <workItem from="1597598120970" duration="10504000" />
       <workItem from="1597620564323" duration="1684000" />
-      <workItem from="1597683793654" duration="18157000" />
+      <workItem from="1597683793654" duration="19102000" />
     </task>
     <task id="LOCAL-00001" summary="Tudo rodando">
       <created>1597175558516</created>
@@ -297,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597371935168</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Ajustes finais backend">
+      <created>1597703405863</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1597703405863</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,7 +314,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Tudo rodando" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tudo rodando" />
+    <MESSAGE value="Ajustes finais backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajustes finais backend" />
   </component>
   <component name="WindowStateProjectService">
     <state x="485" y="60" key="#Vue" timestamp="1597366598006">
@@ -380,9 +378,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="9" key="SettingsEditor/1366.-1.1360.728/0.0.1366.728@0.0.1366.728" timestamp="1597372042731" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1597372136609">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="258" y="101" key="Vcs.Push.Dialog.v2" timestamp="1597703786739">
+      <screen x="0" y="0" width="1280" height="760" />
     </state>
+    <state x="258" y="101" key="Vcs.Push.Dialog.v2/0.0.1280.760@0.0.1280.760" timestamp="1597703786739" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/1366.-1.1360.728/0.0.1366.728@0.0.1366.728" timestamp="1597372136609" />
     <state x="486" y="143" width="493" height="454" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1597692367242">
       <screen x="0" y="0" width="1280" height="760" />
@@ -396,10 +395,10 @@
     <state x="266" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1280.760@0.0.1280.760" timestamp="1597697706268" />
     <state x="266" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1280.37.1360.728/0.0.1280.760@0.0.1280.760" timestamp="1597606533361" />
     <state x="284" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1366.-1.1360.728/0.0.1366.728@0.0.1366.728" timestamp="1597432662466" />
-    <state x="365" y="0" width="647" height="760" key="find.popup" timestamp="1597701871277">
+    <state x="365" y="0" width="647" height="760" key="find.popup" timestamp="1597704099307">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state x="365" y="0" width="647" height="760" key="find.popup/0.0.1280.760@0.0.1280.760" timestamp="1597701871277" />
+    <state x="365" y="0" width="647" height="760" key="find.popup/0.0.1280.760@0.0.1280.760" timestamp="1597704099307" />
     <state x="365" y="0" width="647" height="760" key="find.popup/1280.37.1360.728/0.0.1280.760@0.0.1280.760" timestamp="1597602179352" />
     <state x="390" y="0" width="690" height="728" key="find.popup/1366.-1.1360.728/0.0.1366.728@0.0.1366.728" timestamp="1597434811401" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1597368662535">
