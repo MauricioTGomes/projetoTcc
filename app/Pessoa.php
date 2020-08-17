@@ -65,19 +65,7 @@ class Pessoa extends Model
         return $this->attributes['cliente'] = $value ? '1' : '0';
     }
 
-    public function buscaPessoasPesquisa($parametro = null) {
-		$query = $this->newQuery();
-
-		if ($parametro == null) {
-			return $query->paginate(10);
-		}
-
-		$query->where(function ($q) use ($parametro) {
-				$q->where('ativo', '1')
-					->where('nome', 'like', "%$parametro%")
-				->orWhere('cpf', 'like', "%$parametro%");
-			});
-
-		return $query->get();
+    public function listagem($inativo = false) {
+		return $this->newQuery()->where('ativo', $inativo ? '0' : '1')->get();
     }
 }

@@ -16,7 +16,7 @@ class CreatePedidoTable extends Migration {
             $table->increments('id');
             $table->integer('pessoa_id')->unsigned();
             $table->integer('user_abertura_id')->unsigned();
-            $table->integer('user_fechamento_id')->default(null);
+            $table->integer('user_estorno_id')->default(null);
             $table->decimal('valor_total', 10, 2)->default(0.00);
             $table->decimal('valor_desconto', 10, 2)->default(0.00);
             $table->decimal('valor_liquido', 10, 2)->default(0.00);

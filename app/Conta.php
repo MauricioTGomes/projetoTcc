@@ -55,7 +55,7 @@ class Conta extends Model {
 	}
 
 	public function pedido() {
-		//return $this->hasOne(Pedido::class , 'pedido_id');
+		return $this->hasOne(Pedido::class , 'pedido_id');
 	}
 
 	public function parcelasPagas() {
@@ -79,11 +79,11 @@ class Conta extends Model {
 		}
 	}
 
-	public function getContasListagem($tipo = 'R') {
+	public function getContasListagem($tipo = 'R', $valorZero = false) {
 	    return $this->newQuery()
             ->join('pessoa', 'pessoa.id', '=', 'conta_receber_pagar.pessoa_id')
             ->where('tipo_operacao', $tipo)
-            ->where('vlr_restante', '>', '0.00')
+            ->where('vlr_restante', $valorZero ? '<=' : '>', '0.00')
             ->with('pessoa', 'parcelas', 'parcelasPagas', 'parcelasAbertas')
             ->select(DB::raw("conta_receber_pagar.*, if(pessoa.tipo = 'JURIDICO', CONCAT(pessoa.razao_social, ' (', pessoa.cnpj, ')'), CONCAT(pessoa.nome, ' (', pessoa.cpf, ')')) as nome_pessoa"))->get();
     }

@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
 use App\Produto;
+use Illuminate\Support\Facades\DB;
 
 class ProdutoController extends Controller
 {
@@ -58,7 +58,7 @@ class ProdutoController extends Controller
         return \response()->json($produtoModel->find($idProduto));
     }
 
-    public function getProdutos(Produto $produtoModel) {
-        return response()->json($produtoModel->all());
+    public function getProdutos(Request $request, Produto $produtoModel) {
+        return response()->json($produtoModel->listagem($request->input('inativo')));
     }
 }

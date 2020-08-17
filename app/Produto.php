@@ -33,4 +33,8 @@ class Produto extends Model
     public function getValorVendaAttribute($value) {
         return formatValueForUser($value);
     }
+
+    public function listagem($inativo = false) {
+        return $this->newQuery()->where('ativo', $inativo ? '0' : '1')->get();
+    }
 }

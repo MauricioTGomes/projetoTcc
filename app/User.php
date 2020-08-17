@@ -17,7 +17,7 @@ class User extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'tipo', 'porcentagem_comissao'
     ];
 
     /**
@@ -42,9 +42,13 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->getKey();
     }
-    
+
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+    public function getEmail($mail) {
+        return $this->newQuery()->where('email', $mail)->get()->first();
     }
 }

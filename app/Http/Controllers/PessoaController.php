@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
 use App\Pessoa;
+use Illuminate\Support\Facades\DB;
 
 class PessoaController extends Controller
 {
 
     public function __contruct() {}
-
 
     public function gravar(Request $request) {
         try {
@@ -28,9 +27,9 @@ class PessoaController extends Controller
         try {
             DB::beginTransaction();
             $pessoa = $pessoaModel->find($idPessoa);
-			//if (!is_null($pessoa->pedidos->first()) || !is_null($pessoa->contas->first())) {
-			//	throw new Exception("pessoa com movimentação financeira, cancele e apague as contas e vendas antes de continuar");
-			//}
+			if (!is_null($pessoa->pedidos->first()) || !is_null($pessoa->contas->first())) {
+				throw new \Exception("pessoa com movimentação financeira, cancele e apague as contas e vendas antes de continuar");
+			}
 			$pessoa->delete();
             DB::commit();
             return response()->json(['erro' => false, 'mensagem' => 'Pessoa eliminada com sucesso.']);
@@ -58,7 +57,7 @@ class PessoaController extends Controller
         return \response()->json($pessoaModel->find($idPessoa));
     }
 
-    public function getPessoas(Pessoa $pessoaModel) {
-        return response()->json($pessoaModel->all());
+    public function getPessoas(Request $request, Pessoa $pessoaModel) {
+        return response()->json($pessoaModel->listagem($request->input('inativo')));
     }
 }

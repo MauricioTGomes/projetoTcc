@@ -23,7 +23,7 @@ class ContaController extends Controller {
 	}
 
 	public function getContas(Request $request) {
-		$contas = $this->contaModel->getContasListagem($request->input('tipo'));
+		$contas = $this->contaModel->getContasListagem($request->input('tipo'), $request->input('valorZerado'));
 		return response()->json($contas);
 	}
 

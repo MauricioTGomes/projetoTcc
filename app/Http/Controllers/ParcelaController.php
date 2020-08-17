@@ -35,17 +35,16 @@ class ParcelaController extends Controller {
 			$parcela->conta->vlr_restante = formatValueForUser(formatValueForMysql($parcela->conta->vlr_restante) - $parcela->valor_original);
 			$parcela->conta->save();
 
-			$descricao = "Recebimento parcela: ".$parcela->nro_parcela."/".$parcela->conta->qtd_parcelas." do título ".$parcela->conta->titulo;
+			$descricao = "Recebimento parcela: ".$parcela->nro_parcela."/".count($parcela->conta->parcelas)." do título ".$parcela->conta->titulo;
 			if ($parcela->conta->tipo_operacao == 'P') {
-				$descricao = "Pagamento parcela: ".$parcela->nro_parcela."/".$parcela->conta->qtd_parcelas." do título ".$parcela->conta->titulo;
+				$descricao = "Pagamento parcela: ".$parcela->nro_parcela."/".count($parcela->conta->parcelas)." do título ".$parcela->conta->titulo;
 			}
 
 			$this->movimentacaoCaixa->create([
 			    'user_id' => auth()->user()->id,
-				'valor' => $parcela->valor,
+				'valor' => $parcela->valor_original,
 				'parcela_id' => $parcela->id,
 				'descricao' => $descricao . "\r\nPessoa: " . $parcela->conta->pessoa->nome_documento_completo,
-				'estornado' => '0',
 				'movimentacao' => $parcela->conta->tipo_operacao == 'R' ? 'ENTRADA' : 'SAIDA'
             ]);
 
@@ -71,10 +70,9 @@ class ParcelaController extends Controller {
                 'user_id' => auth()->user()->id,
                 'valor' => $parcela->valor,
                 'parcela_id' => $parcela->id,
-                'descricao' => "Estorno da parcela: ".$parcela->nro_parcela."/".$parcela->conta->qtd_parcelas." do título ".$parcela->conta->titulo .
+                'descricao' => "Estorno da parcela: ".$parcela->nro_parcela."/".count($parcela->conta->parcelas)." do título ".$parcela->conta->titulo .
                     "\r\nPessoa: " . $parcela->conta->pessoa->nome_documento_completo,
-                'estornado' => '1',
-                'movimentacao' => $parcela->conta->tipo_operacao == 'R' ? 'ENTRADA' : 'SAIDA'
+                'movimentacao' => $parcela->conta->tipo_operacao == 'R' ? 'SAIDA' : 'ENTRADA'
             ]);
 
 			DB::commit();

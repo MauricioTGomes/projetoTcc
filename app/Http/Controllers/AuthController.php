@@ -13,12 +13,17 @@ class AuthController extends Controller
         $this->middleware('auth:api', ['except' => ['login']]);
     }
 
-    public function login()
+    public function login(Request $request)
     {
+
         $credentials = request(['email', 'password']);
 
         if (!$token = auth()->attempt($credentials)) {
             return response()->json(['error' => true, 'mensagem' => 'E-mail ou senha inválida']);
+        }
+
+        if ($request->getHttpHost() == 'localhost:8000' && auth()->user()->tipo !== 'GERENTE') {
+            return response()->json(['error' => true, 'mensagem' => 'Você não tem permissão para acessar esta área.']);
         }
 
         return $this->respondWithToken($token);
