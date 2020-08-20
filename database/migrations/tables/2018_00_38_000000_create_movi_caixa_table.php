@@ -18,7 +18,7 @@ class CreateMoviCaixaTable extends Migration {
             $table->integer('user_id')->unsigned();
             $table->integer('parcela_id')->unsigned()->default(null);
             $table->decimal('valor', 10, 2)->default(0.00);
-            $table->string('descricao', 255);
+            $table->string('descricao', 255)->default(null);
             $table->char('operacao', 1)->default(0);
             $table->enum('movimentacao', ['ENTRADA', 'SAIDA'])->default('ENTRADA');
             $table->timestamps();

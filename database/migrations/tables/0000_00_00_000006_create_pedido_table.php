@@ -20,10 +20,10 @@ class CreatePedidoTable extends Migration {
             $table->decimal('valor_total', 10, 2)->default(0.00);
             $table->decimal('valor_desconto', 10, 2)->default(0.00);
             $table->decimal('valor_liquido', 10, 2)->default(0.00);
-            $table->string('observacoes', 255);
+            $table->string('observacoes', 255)->default(null);
             $table->char('status', 1)->default(0);
             $table->char('numero', 255);
-            $table->date('data_entrega');
+            $table->date('data_entrega')->default(null);
             $table->timestamps();
         });
 
