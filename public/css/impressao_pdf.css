@@ -1,0 +1,78 @@
+table, tr, td, th, tbody, thead, tfoot {
+    page-break-inside: avoid !important;
+}
+
+hr {
+    border-top: 1px solid #5a5a5a !important;
+    margin: 10px 0 !important;
+}
+
+body.font-size-9 * {
+    font-size: 9px;
+}
+
+body.font-size-10 * {
+    font-size: 10px;
+}
+
+body.font-size-11 * {
+    font-size: 11px;
+}
+
+header {
+    padding-bottom: 90px;
+}
+
+div {
+    line-height: 180%;
+}
+
+.padding-T10 {
+    padding-top: 10px;
+}
+
+/*
+ RELATÓRIOS
+*/
+.cabecalho.logomarca {
+    margin-top: 6px;
+    max-height: 90px;
+    max-width: 150px;
+}
+.cabecalho.titulo {
+    font-size: 12px !important;
+    font-weight: bold !important;
+    line-height: 250%;
+}
+.cabecalho.empresa {
+    font-size: 11px !important;
+    line-height: 250%;
+}
+
+.relatorio.titulo {
+    font-size: 12px !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    line-height: 180%;
+    padding-bottom: 10px;
+}
+.subtitulo {
+    font-size: 10px !important;
+}
+
+/*
+ PEDIDOS
+*/
+.documento.impressao .tabelaProdutos, .documento.impressao .tabelaFormasPagamento {
+    margin-bottom: 0;
+}
+.documento.impressao .tabelaProdutos > thead > tr > th,
+.documento.impressao .tabelaFormasPagamento > thead > tr > th {
+    border-bottom: 0 !important;
+}
+.documento.impressao .labelTitulo {
+    font-size: 14px;
+}
+.documento.impressao .assinaturaCliente {
+    margin-top: 25px;
+}

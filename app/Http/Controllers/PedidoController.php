@@ -48,6 +48,9 @@ class PedidoController extends Controller {
         $snappy->setOption('footer-html', view('layouts.footer_relatorios')->render());
         $snappy->loadView('pedido.conteudo', $parametros);
 
+        return \PDF::loadView('site.certificate.certificate', $parametros)
+        ->download('nome-arquivo-pdf-gerado.pdf');
+
         return $snappy->download('Pedido - '.$parametros['pedido']->numero);
     }
 
