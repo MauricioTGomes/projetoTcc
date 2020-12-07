@@ -46,28 +46,20 @@ class PedidoController extends Controller {
             DB::beginTransaction();
             $pedido = $this->pedidoModel->find($id);
 
-            if (isset($pedido->conta) && !is_null($pedido->conta->parcelasPagas->first())) {
-                throw new \Exception("Pedido com movimentação financeira.");
-            } else {
-                $this->controlaPedido->retornaEstoque($pedido->itens);
+            $this->controlaPedido->retornaEstoque($pedido->itens);
 
-                if (isset($pedido->conta)) {
-                    $pedido->conta()->delete();
-                }
-
-                if(!is_null($pedido->movimentacaoCaixa)) {
-                    MovimentacaoCaixa::create([
-                        'pedido_id' => $pedido->id,
-                        'user_id' => auth()->user()->id,
-                        'valor' => $pedido->valor_total,
-                        'valor_desconto' => $pedido->valor_desconto,
-                        'movimentacao' => 'SAIDA',
-                        'descricao' => "Estorno pedido de número: " . $pedido->numero . (is_null($pedido->pessoa) ? ' cliente não informado.' : " para cliente " . $pedido->pessoa->nome_documento_completo),
-                    ]);
-                }
-
-                $pedido->update(['estornado' => '1']);
+            if(!is_null($pedido->movimentacaoCaixa)) {
+                MovimentacaoCaixa::create([
+                    'pedido_id' => $pedido->id,
+                    'user_id' => auth()->user()->id,
+                    'valor' => $pedido->valor_total,
+                    'valor_desconto' => $pedido->valor_desconto,
+                    'movimentacao' => 'SAIDA',
+                    'descricao' => "Estorno pedido de número: " . $pedido->numero . (is_null($pedido->pessoa) ? ' cliente não informado.' : " para cliente " . $pedido->pessoa->nome_documento_completo),
+                ]);
             }
+
+            $pedido->update(['estornado' => '1']);
             DB::commit();
             return response()->json(['erro' => 0, 'mensagem' => "Sucesso ao eliminar pedido"]);
         } catch (\Exception $exception) {
