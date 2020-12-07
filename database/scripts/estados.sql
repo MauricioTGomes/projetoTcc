@@ -13,7 +13,7 @@ INSERT INTO estado (id, nome, uf, codigo) VALUES (12, 'Mato Grosso do Sul', 'MS'
 INSERT INTO estado (id, nome, uf, codigo) VALUES (13, 'Mato Grosso', 'MT', '51');
 INSERT INTO estado (id, nome, uf, codigo) VALUES (14, 'Pará', 'PA', '15');
 INSERT INTO estado (id, nome, uf, codigo) VALUES (15, 'Paraíba', 'PB', '25');
-INSERT INTO estado (id, nome, uf, codigo) VALUES (16, 'Pernambuco', 'PE', '16', '2');
+INSERT INTO estado (id, nome, uf, codigo) VALUES (16, 'Pernambuco', 'PE', '16');
 INSERT INTO estado (id, nome, uf, codigo) VALUES (17, 'Piauí', 'PI', '22');
 INSERT INTO estado (id, nome, uf, codigo) VALUES (18, 'Paraná', 'PR', '41');
 INSERT INTO estado (id, nome, uf, codigo) VALUES (19, 'Rio de Janeiro', 'RJ', '33');
