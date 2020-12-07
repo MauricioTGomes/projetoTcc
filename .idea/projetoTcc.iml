@@ -20,5 +20,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="projetoTccFront" />
+    <orderEntry type="module" module-name="ProjetoTccFront" />
   </component>
 </module>

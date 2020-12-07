@@ -17,7 +17,7 @@ class Item extends Model {
     );
 
     public function insereItem($array, $pedidoId) {
-        DB::insert("insert into item (produto_id, pedido_id, valor_total, quantidade, valor_unitario) values (?, ?, ?, ?, ?)", [$array['produto_id'], $pedidoId, $array['valor_total'], $array['quantidade'], $array['valor_unitario']]);
+        DB::insert("insert into item (produto_id, pedido_id, valor_total, quantidade, valor_unitario) values (?, ?, ?, ?, ?)", [$array['produto_id'], $pedidoId, formatValueForMysql($array['valor_total']), formatValueForMysql($array['quantidade']), formatValueForMysql($array['valor_unitario'])]);
     }
 
     public function deleteItem($itemId) {

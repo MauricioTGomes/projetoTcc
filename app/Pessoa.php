@@ -39,7 +39,7 @@ class Pessoa extends Model
     }
 
     public function insertPessoa($array) {
-        return DB::update("insert into pessoa (cidade_id, fantasia, nome, razao_social, cpf, cnpj, ie, rg, cep, email, endereco, endereco_nro, bairro, complemento, fone, ativo, cliente, tipo, fornecedor) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0)", [$array['cidade_id'], $array['fantasia'], $array['nome'], $array['razao_social'], $array['cpf'], $array['cnpj'], $array['ie'], $array['rg'], $array['cep'], $array['email'], $array['endereco'], $array['endereco_nro'], $array['bairro'], $array['complemento'], $array['fone'], $array['ativo'], $array['cliente'], $array['tipo']]);
+        return DB::update("insert into pessoa (cidade_id, fantasia, nome, razao_social, cpf, cnpj, ie, rg, cep, email, endereco, endereco_nro, bairro, complemento, fone, ativo, cliente, tipo, fornecedor) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '0')", [$array['cidade_id'], $array['fantasia'], $array['nome'], $array['razao_social'], $array['cpf'], $array['cnpj'], $array['ie'], $array['rg'], $array['cep'], $array['email'], $array['endereco'], $array['endereco_nro'], $array['bairro'], $array['complemento'], $array['fone'], $array['ativo'], $array['cliente'], $array['tipo']]);
     }
 
     public function updatePessoa($array) {

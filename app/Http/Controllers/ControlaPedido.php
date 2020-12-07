@@ -7,6 +7,7 @@ use App\Conta;
 use App\Item;
 use App\MovimentacaoCaixa;
 use App\Produto;
+use Carbon\Carbon;
 use Webpatser\Uuid\Uuid;
 
 class ControlaPedido {
@@ -42,7 +43,7 @@ class ControlaPedido {
     }
 
     private function controlaFormaPagPedido() {
-        $descricaoNome = is_null($this->pedido->pessoa) ? ' cliente não informado.' : " para cliente " . $this->pedido->pessoa->nome_documento_completo;
+        $descricaoNome = is_null($this->pedido->pessoa) ? ' cliente não informado.' : " para cliente " . $this->pedido->pessoa->nome_pessoa;
 
         $this->moviCaixaModel->insereMovi([
             'pedido_id' => $this->pedido->id,
@@ -51,6 +52,8 @@ class ControlaPedido {
             'valor_desconto' => $this->pedido->valor_desconto,
             'movimentacao' => 'ENTRADA',
             'descricao' => "Lançamento pedido de número: " . $this->pedido->numero . $descricaoNome,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
         ]);
     }
 

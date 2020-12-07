@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../ProjetoTccFront/.idea/ProjetoTccFront.iml" filepath="$PROJECT_DIR$/../ProjetoTccFront/.idea/ProjetoTccFront.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/projetoTcc.iml" filepath="$PROJECT_DIR$/.idea/projetoTcc.iml" />
       <module fileurl="file://$PROJECT_DIR$/../projetoTccFront/.idea/projetoTccFront.iml" filepath="$PROJECT_DIR$/../projetoTccFront/.idea/projetoTccFront.iml" />
     </modules>

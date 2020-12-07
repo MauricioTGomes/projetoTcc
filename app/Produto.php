@@ -20,15 +20,15 @@ class Produto extends Model
     ];
 
     public function deleteProduto($idProduto) {
-        return DB::delete('delete from pessoa where id = ?', [$idProduto]);
+        return DB::delete('delete from produto where id = ?', [$idProduto]);
     }
 
     public function insertProduto($array) {
-        return DB::update("insert into pessoa (nome, apelido_produto, qtd_estoque, valor_venda, codigo, ativo) values (?, ?, ?, ?, ?, ?)", [$array['nome'], $array['apelido_produto'], formatValueForMysql($array['qtd_estoque']), formatValueForMysql($array['valor_venda']), $array['codigo'], $array['ativo']]);
+        return DB::insert("insert into produto (nome, apelido_produto, qtd_estoque, valor_venda, codigo, ativo) values (?, ?, ?, ?, ?, ?)", [$array['nome'], $array['apelido_produto'], formatValueForMysql($array['qtd_estoque']), formatValueForMysql($array['valor_venda']), $array['codigo'], $array['ativo']]);
     }
 
-    public function updateProduto($array) {
-        return DB::update("update produto set nome = ?, apelido_produto = ?, qtd_estoque = ?, valor_venda = ?, codigo = ?, ativo = ? where id = ?", [$array['nome'], $array['apelido_produto'], formatValueForMysql($array['qtd_estoque']), formatValueForMysql($array['valor_venda']), $array['codigo'], $array['ativo'], $array['id']]);
+    public function updateProduto($produto) {
+        return DB::update("update produto set nome = ?, apelido_produto = ?, qtd_estoque = ?, valor_venda = ?, codigo = ?, ativo = ? where id = ?", [$produto->nome, $produto->apelido_produto, $produto->qtd_estoque, $produto->valor_venda, $produto->codigo, $produto->ativo, $produto->id]);
     }
 
     public function find($id) {

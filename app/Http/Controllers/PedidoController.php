@@ -23,43 +23,45 @@ class PedidoController extends Controller {
         try {
             DB::beginTransaction();
             $input = $request->all();
+            $pedidoLast = $this->pedidoModel->ultimoPedido();
 
-            $pedido = $this->pedidoModel->insertPedido($input + [
+            $this->pedidoModel->insertPedido($input + [
                  'user_abertura_id' => auth()->user()->id,
                  'user_fechamento_id' => $input['faturado'] ? auth()->user()->id : null,
-                 'data_faturamento' => $input['faturado'] ? Carbon::now() : null,
-                 'numero' => $this->pedidoModel->all()->last()->numero + 1
+                 'data_faturamento' => Carbon::now(),
+                 'numero' => is_null($pedidoLast) ? 1 : $pedidoLast->numero + 1
             ]);
 
-            $this->controlaPedido->controlaPedido($pedido, $input);
+            $pedidoLast = $this->pedidoModel->ultimoPedido();
+            $this->controlaPedido->controlaPedido($this->pedidoModel->find($pedidoLast->id), $input);
             DB::commit();
             return response()->json(['erro' => 0, 'mensagem' => "Pedido emitido com sucesso!"]);
         } catch (\Exception $e) {
             DB::rollback();
-            return response()->json(['erro' => 1, 'mensagem' => $e->getMessage()]);
+            return response()->json(['erro' => 1, 'mensagem' => $e->getMessage() . $e->getFile(). $e->getLine()]);
         }
 
     }
 
-    public function excluir($id) {
+    public function excluir($id, MovimentacaoCaixa $moviCaixaModel) {
         try {
             DB::beginTransaction();
-            $pedido = $this->pedidoModel->find($id);
+            $pedido = $this->pedidoModel->find($id, true);
 
             $this->controlaPedido->retornaEstoque($pedido->itens);
 
-            if(!is_null($pedido->movimentacaoCaixa)) {
-                MovimentacaoCaixa::create([
-                    'pedido_id' => $pedido->id,
-                    'user_id' => auth()->user()->id,
-                    'valor' => $pedido->valor_total,
-                    'valor_desconto' => $pedido->valor_desconto,
-                    'movimentacao' => 'SAIDA',
-                    'descricao' => "Estorno pedido de número: " . $pedido->numero . (is_null($pedido->pessoa) ? ' cliente não informado.' : " para cliente " . $pedido->pessoa->nome_documento_completo),
-                ]);
-            }
+            $moviCaixaModel->insereMovi([
+                'pedido_id' => $pedido->id,
+                'user_id' => auth()->user()->id,
+                'valor' => $pedido->valor_total,
+                'valor_desconto' => $pedido->valor_desconto,
+                'movimentacao' => 'SAIDA',
+                'descricao' => "Estorno pedido de número: " . $pedido->numero . (is_null($pedido->pessoa) ? ' cliente não informado.' : " para cliente " . $pedido->pessoa->nome_pessoa),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
 
-            $pedido->update(['estornado' => '1']);
+            $this->pedidoModel->update(['estornado' => '1']);
             DB::commit();
             return response()->json(['erro' => 0, 'mensagem' => "Sucesso ao eliminar pedido"]);
         } catch (\Exception $exception) {
