@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Item extends Model {
     protected $table = 'item';
@@ -15,23 +16,11 @@ class Item extends Model {
         'valor_unitario',
     );
 
-    public function produto() {
-        return $this->hasOne(Produto::class , 'id', 'produto_id');
+    public function insereItem($array, $pedidoId) {
+        DB::insert("insert into item (produto_id, pedido_id, valor_total, quantidade, valor_unitario) values (?, ?, ?, ?, ?)", [$array['produto_id'], $pedidoId, $array['valor_total'], $array['quantidade'], $array['valor_unitario']]);
     }
 
-    public function setValorTotalAttribute($value) {
-        if (substr_count($value, ',') == 0) {
-            return $this->attributes['valor_total'] = $value;
-        } else {
-            return $this->attributes['valor_total'] = formatValueForMysql($value);
-        }
-    }
-
-    public function setValorUnitarioAttribute($value) {
-        if (substr_count($value, ',') == 0) {
-            return $this->attributes['valor_unitario'] = $value;
-        } else {
-            return $this->attributes['valor_unitario'] = formatValueForMysql($value);
-        }
+    public function deleteItem($itemId) {
+        return DB::delete('delete from item where id = ?', [$itemId]);
     }
 }

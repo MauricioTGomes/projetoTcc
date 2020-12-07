@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => 'pgsql',
+    'default' => 'mysql',
 
     /*
     |--------------------------------------------------------------------------
@@ -45,19 +45,20 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'url' => env('DATABASE_URL'),
+
+            /*'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
             'database' => '	heroku_205918ed5e46187',
             'username' => 'ba7efb9d72c637',
-            'password' => '451b4d34',
+            'password' => '451b4d34',*/
 
-            //'url' => env('DATABASE_URL'),
-            //'host' => env('DB_HOST', '127.0.0.1'),
-            //'port' => env('DB_PORT', '3306'),
-            //'database' => 'projetotcc',
-            //'username' => 'mauricio',
-            //'password' => 'root',
+            'url' => env('DATABASE_URL'),
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'port' => env('DB_PORT', '3306'),
+            'database' => 'projetotcc',
+            'username' => 'mauricio',
+            'password' => 'root',
 
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',

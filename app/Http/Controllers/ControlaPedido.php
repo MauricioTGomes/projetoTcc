@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 
 use App\Conta;
+use App\Item;
 use App\MovimentacaoCaixa;
 use App\Produto;
 use Webpatser\Uuid\Uuid;
@@ -13,61 +14,44 @@ class ControlaPedido {
     private $pedido;
     private $contaModel;
     private $produtoModel;
+    private $itemModel;
 
-    public function __construct(MovimentacaoCaixa $movimentacaoCaixa, Conta $conta, Produto $produto) {
+    public function __construct(MovimentacaoCaixa $movimentacaoCaixa, Conta $conta, Produto $produto, Item $item) {
         $this->moviCaixaModel = $movimentacaoCaixa;
         $this->contaModel = $conta;
         $this->produtoModel = $produto;
+        $this->itemModel = $item;
     }
 
     private function baixaEstoque($itens) {
         foreach ($itens as $item) {
-            $this->pedido->itens()->create($item);
+            $this->itemModel->insereItem($item, $this->pedido->id);
             $produto = $this->produtoModel->find($item['produto_id']);
-            $produto->qtd_estoque = formatValueForMysql($produto->qtd_estoque) - formatValueForMysql($item['quantidade']);
-            $produto->update($produto->toArray());
+            $produto->qtd_estoque = $produto->qtd_estoque - formatValueForMysql($item['quantidade']);
+            $this->produtoModel->updateProduto($produto);
         }
     }
 
     public function retornaEstoque($itens) {
         foreach ($itens as $item) {
             $produto = $this->produtoModel->find($item->produto_id);
-            $produto->qtd_estoque = formatValueForMysql($produto->qtd_estoque) + formatValueForMysql($item->quantidade);
-            $produto->update($produto->toArray());
-            $item->delete();
+            $produto->qtd_estoque = $produto->qtd_estoque + formatValueForMysql($item->quantidade);
+            $this->produtoModel->updateProduto($produto);
+            $this->itemModel->deleteItem($item->id);
         }
     }
 
-    private function controlaFormaPagPedido($formaPagamento) {
-        if ($formaPagamento['tipo'] == 'VISTA') {
-            $descricaoNome = is_null($this->pedido->pessoa) ? ' cliente não informado.' : " para cliente " . $this->pedido->pessoa->nome_documento_completo;
+    private function controlaFormaPagPedido() {
+        $descricaoNome = is_null($this->pedido->pessoa) ? ' cliente não informado.' : " para cliente " . $this->pedido->pessoa->nome_documento_completo;
 
-            $this->moviCaixaModel->create([
-                'pedido_id' => $this->pedido->id,
-                'user_id' => auth()->user()->id,
-                'valor' => $this->pedido->valor_total,
-                'valor_desconto' => $this->pedido->valor_desconto,
-                'movimentacao' => 'ENTRADA',
-                'descricao' => "Lançamento pedido de número: " . $this->pedido->numero . $descricaoNome,
-            ]);
-        } else {
-            if (is_null($this->pedido->pessoa)) throw new \Exception("Informe uma pessoa antes de gravar");
-
-            $conta = $this->contaModel->create([
-                'pessoa_id' => $this->pedido->pessoa_id,
-                'pedido_id' => $this->pedido->id,
-                'titulo' => strtoupper(Uuid::generate()),
-                'data_emissao' => date('d/m/Y'),
-                'user_id' => auth()->user()->id,
-                'vlr_total' => $this->pedido->valor_total,
-                'vlr_restante' => $this->pedido->valor_total,
-                'tipo_operacao' => 'R',
-                'qtd_dias' => $formaPagamento['qtd_dias']
-            ]);
-            foreach ($formaPagamento['array_parcelas'] as $index => $parcela) {
-                $conta->parcelas()->create(['valor_original' => $parcela['valor']] + $parcela);
-            }
-        }
+        $this->moviCaixaModel->insereMovi([
+            'pedido_id' => $this->pedido->id,
+            'user_id' => auth()->user()->id,
+            'valor' => $this->pedido->valor_total,
+            'valor_desconto' => $this->pedido->valor_desconto,
+            'movimentacao' => 'ENTRADA',
+            'descricao' => "Lançamento pedido de número: " . $this->pedido->numero . $descricaoNome,
+        ]);
     }
 
     public function controlaPedido($pedido, $input, $update = false) {
@@ -80,7 +64,7 @@ class ControlaPedido {
         $this->baixaEstoque($input['itens']);
 
         if ($input['faturado']) {
-            $this->controlaFormaPagPedido($input['formaPagamento']);
+            $this->controlaFormaPagPedido();
         }
     }
 }

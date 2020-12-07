@@ -24,7 +24,7 @@ class PedidoController extends Controller {
             DB::beginTransaction();
             $input = $request->all();
 
-            $pedido = $this->pedidoModel->create($input + [
+            $pedido = $this->pedidoModel->insertPedido($input + [
                  'user_abertura_id' => auth()->user()->id,
                  'user_fechamento_id' => $input['faturado'] ? auth()->user()->id : null,
                  'data_faturamento' => $input['faturado'] ? Carbon::now() : null,
@@ -39,19 +39,6 @@ class PedidoController extends Controller {
             return response()->json(['erro' => 1, 'mensagem' => $e->getMessage()]);
         }
 
-    }
-
-    public function imprimePedido($id) {
-        $parametros['pedido'] = $this->pedidoModel->find($id);
-        $snappy               = App::make('snappy.pdf.wrapper');
-        $snappy->setOption('header-html', view('layouts.header_relatorios')->render());
-        $snappy->setOption('footer-html', view('layouts.footer_relatorios')->render());
-        $snappy->loadView('pedido.conteudo', $parametros);
-
-        return \PDF::loadView('site.certificate.certificate', $parametros)
-        ->download('nome-arquivo-pdf-gerado.pdf');
-
-        return $snappy->download('Pedido - '.$parametros['pedido']->numero);
     }
 
     public function excluir($id) {
@@ -89,32 +76,13 @@ class PedidoController extends Controller {
         }
     }
 
-    public function update(Request $request) {
-        try {
-            DB::beginTransaction();
-            $input = $request->all();
-            $pedidoAnterior = $this->pedidoModel->find($input['id']);
-            $this->controlaPedido->controlaPedido($pedidoAnterior, $input, true);
-            $input['data_faturamento'] = $input['faturado'] ? Carbon::now() : null;
-            $input['data_entrega_realizada'] = null;
-            $pedidoAnterior->update($input);
-            DB::commit();
-            return response()->json(['erro' => 0, 'mensagem' => 'Sucesso ao alterar pedido.']);
-        } catch (\Exception $e) {
-            DB::rollback();
-            return response()->json(['erro' => 1, 'mensagem' => $e->getFile() . $e->getLine()]);
-        }
-
-    }
-
     public function getPedidos(Request $request) {
         $pedidos = $this->pedidoModel->getPedidosListagem($request->input('estornado'));
         return response()->json($pedidos);
     }
 
     public function getPedido($id) {
-        $pedido = $this->pedidoModel->find($id)->load('itens.produto', 'pessoa');
-        return response()->json($pedido);
+        return response()->json($this->pedidoModel->find($id, true));
     }
 
     public function alteraStatus($id) {
@@ -126,10 +94,7 @@ class PedidoController extends Controller {
             $status = '1';
             $data = Carbon::now();
         }
-
-        $pedido->status = $status;
-        $pedido->data_entrega_realizada = $data;
-        $pedido->update();
+        $this->pedidoModel->updateStatus($id, $status, $data);
         return response(204);
     }
 }

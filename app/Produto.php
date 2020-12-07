@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Produto extends Model
 {
@@ -18,23 +19,23 @@ class Produto extends Model
         'ativo'
     ];
 
-    public function setQtdEstoqueAttribute($value) {
-        return $this->attributes['qtd_estoque'] = formatValueForMysql($value);
+    public function deleteProduto($idProduto) {
+        return DB::delete('delete from pessoa where id = ?', [$idProduto]);
     }
 
-    public function setValorVendaAttribute($value) {
-        return $this->attributes['valor_venda'] = formatValueForMysql($value);
+    public function insertProduto($array) {
+        return DB::update("insert into pessoa (nome, apelido_produto, qtd_estoque, valor_venda, codigo, ativo) values (?, ?, ?, ?, ?, ?)", [$array['nome'], $array['apelido_produto'], formatValueForMysql($array['qtd_estoque']), formatValueForMysql($array['valor_venda']), $array['codigo'], $array['ativo']]);
     }
 
-    public function getQtdEstoqueAttribute($value) {
-        return formatValueForUser($value);
+    public function updateProduto($array) {
+        return DB::update("update produto set nome = ?, apelido_produto = ?, qtd_estoque = ?, valor_venda = ?, codigo = ?, ativo = ? where id = ?", [$array['nome'], $array['apelido_produto'], formatValueForMysql($array['qtd_estoque']), formatValueForMysql($array['valor_venda']), $array['codigo'], $array['ativo'], $array['id']]);
     }
 
-    public function getValorVendaAttribute($value) {
-        return formatValueForUser($value);
+    public function find($id) {
+        return DB::select("select * from produto where id = ?", [$id])[0];
     }
 
     public function listagem($inativo = false) {
-        return $this->newQuery()->where('ativo', $inativo ? '0' : '1')->get();
+        return DB::select("select * from produto where ativo = ?", [$inativo ? '0' : '1']);
     }
 }

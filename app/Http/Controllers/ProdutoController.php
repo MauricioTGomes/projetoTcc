@@ -12,10 +12,10 @@ class ProdutoController extends Controller
     public function __contruct() {}
 
 
-    public function gravar(Request $request) {
+    public function gravar(Request $request, Produto $produtoModel) {
         try {
             DB::beginTransaction();
-            Produto::create($request->all());
+            $produtoModel->insertProduto($request->all());
             DB::commit();
             return response()->json(['erro' => false, 'mensagem' => 'Produto cadastrada com sucesso.']);
         } catch(\Exception $e) {
@@ -27,11 +27,7 @@ class ProdutoController extends Controller
     public function excluir($idProduto, Produto $produtoModel) {
         try {
             DB::beginTransaction();
-            $produto = $produtoModel->find($idProduto);
-			//if (!is_null($pessoa->pedidos->first()) || !is_null($pessoa->contas->first())) {
-			//	throw new Exception("pessoa com movimentação financeira, cancele e apague as contas e vendas antes de continuar");
-			//}
-			$produto->delete();
+            $produtoModel->deleteProduto($idProduto);
             DB::commit();
             return response()->json(['erro' => false, 'mensagem' => 'Produto eliminada com sucesso.']);
         } catch(\Exception $e) {
@@ -43,9 +39,7 @@ class ProdutoController extends Controller
     public function update(Request $request, Produto $produtoModel) {
         try {
             DB::beginTransaction();
-            $input = $request->all();
-			$produto = $produtoModel->find($input['id']);
-			$produto->update($input);
+            $produtoModel->updateProduto($request->all());
 			DB::commit();
 			return response()->json(['erro' => false, 'mensagem' => 'Produto alterada com sucesso.']);
 		} catch (\Exception $e) {

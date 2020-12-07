@@ -11,10 +11,10 @@ class PessoaController extends Controller
 
     public function __contruct() {}
 
-    public function gravar(Request $request) {
+    public function gravar(Request $request, Pessoa $pessoaModel) {
         try {
             DB::beginTransaction();
-            Pessoa::create($request->all());
+            $pessoaModel->insertPessoa($request->all());
             DB::commit();
             return response()->json(['erro' => false, 'mensagem' => 'Pessoa cadastrada com sucesso.']);
         } catch(\Exception $e) {
@@ -27,10 +27,10 @@ class PessoaController extends Controller
         try {
             DB::beginTransaction();
             $pessoa = $pessoaModel->find($idPessoa);
-			if (!is_null($pessoa->pedidos->first()) || !is_null($pessoa->contas->first())) {
+            if (isset($pessoa->pedidos[0]) || isset($pessoa->contas[0])) {
 				throw new \Exception("pessoa com movimentação financeira, cancele e apague as contas e vendas antes de continuar");
 			}
-			$pessoa->delete();
+			$pessoaModel->deletePessoa($idPessoa);
             DB::commit();
             return response()->json(['erro' => false, 'mensagem' => 'Pessoa eliminada com sucesso.']);
         } catch(\Exception $e) {
@@ -43,8 +43,7 @@ class PessoaController extends Controller
         try {
             DB::beginTransaction();
             $input = $request->all();
-			$pessoa = $pessoaModel->find($input['id']);
-			$pessoa->update($input);
+            $pessoaModel->updatePessoa($input);
 			DB::commit();
 			return response()->json(['erro' => false, 'mensagem' => 'Pessoa alterada com sucesso.']);
 		} catch (\Exception $e) {
